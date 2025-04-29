@@ -1,5 +1,6 @@
 package conta_bancaria;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import conta_bancaria.model.Conta;
@@ -11,8 +12,20 @@ public class Menu{
 		Scanner read = new Scanner(System.in);
 		int opcao;
 		
-		 Conta c1 = new Conta(1, 123 , 1 , "jah" , 500000);
+		 Conta c1 = new Conta(1, 123 , 1 , "Jahseh Onfroy" , 500000);
+		 
+		 
+		 c1.sacar(100);
+		 
+		 
+		 c1.depositar(1000);
+		
+		 
+		 c1.setTitular("Jahseh Onfroy");
 		 c1.visualizar();
+		 
+		 ContaCorrente cc1 = new ContaCorrente(2, 888, 5, "Jorge Ben", 600000, 60000);
+		 cc1.visualizar();
 		 
 		while(true) 
 		{
@@ -41,7 +54,7 @@ public class Menu{
 			
 		 if (opcao == 9 ) 
 		 {
-			System.out.println("\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+			System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
 			sobre();
 			read.close();
 			System.exit(0);
@@ -49,38 +62,38 @@ public class Menu{
 		 switch (opcao) 
 		 {
 			case 1:
-				System.out.println("Criar Conta\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Criar Conta\n\n");
 			break;
 			case 2:
-				System.out.println("Listar todas as Contas\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Listar todas as Contas\n\n");
 
 			break;
 			case 3:
-				System.out.println("Consultar dados da Conta - por número\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Consultar dados da Conta - por número\n\n");
 
 			break;
 			case 4:
-				System.out.println("Atualizar dados da Conta\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Atualizar dados da Conta\n\n");
 
 			break;
 			case 5:
-				System.out.println("Apagar a Conta\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Apagar a Conta\n\n");
 
 			break;
 			case 6:
-				System.out.println("Saque\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Saque\n\n");
 
 			break;
 			case 7:
-				System.out.println("Depósito\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Depósito\n\n");
 
 			break;
 			case 8:
-				System.out.println("Transferência entre Contas\n\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Transferência entre Contas\n\n");
 
 			break;
 			default:
-				System.out.println("\nOpção Inválida!\n");
+				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "\nOpção Inválida!\n");
 			break;
 		 }
 		}
@@ -88,10 +101,24 @@ public class Menu{
 }
 	public static void sobre() {
 		System.out.println("\n*********************************************************");
-		System.out.println("Projeto Desenvolvido por: Muris ");
-		System.out.println("Generation Brasil - murilom@generation.org");
-		System.out.println("https://github.com/Matttosz");
+		System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT +"Projeto Desenvolvido por: Muris ");
+		System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT +"Generation Brasil - murilom@generation.org");
+		System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT +"https://github.com/Matttosz");
 		System.out.println("**********************************************************");
 		}
+	
+	public static void keypress() 
+	{
+		
+		try 
+		{
+			System.out.println(Cores.TEXT_RESET + "\n\nPressione Enter para Continuar");
+			System.in.read();
+		} catch(IOException e ) {
+			
+			System.out.println("Você pressionou um tecla diferente de 'Enter'! ");
+		}
+		
+	}
 		
 }

@@ -66,8 +66,12 @@ public class Conta {
 			System.out.println("\nSaldo é Insuficiente");
 			return false;
 		}
-		this.setSaldo(this.saldo - valor);
+		this.saldo -= valor;
 		return true;
+	}
+	
+	public void depositar(float valor) {
+		this.saldo += valor;
 	}
 	
 	public void visualizar() {
