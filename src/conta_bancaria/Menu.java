@@ -99,6 +99,12 @@ public class Menu{
 			break;
 			case 3:
 				System.out.println(Cores.TEXT_PURPLE_BOLD_BRIGHT + "Consultar dados da Conta - por número\n\n");
+				
+				System.out.println("Digite o número da conta: ");
+				numero = read.nextInt();
+				
+				contas.procurarPorNumero(numero);
+				
 			keypress();
 			break;
 			case 4:
