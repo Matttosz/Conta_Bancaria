@@ -92,7 +92,7 @@ public class Conta {
 		System.out.println("***************************************");
 		System.out.println("Número da Conta: " + this.numero);
 		System.out.println("Número da agencia: " + this.agencia);
-		System.out.println("Número da tipo: " + this.tipo);
+		System.out.println("Número da tipo: " + tipo);
 		System.out.println("Número da titular: " + this.titular);
 		System.out.println("Número da saldo: " + nfMoeda.format(this.saldo));
 	}
